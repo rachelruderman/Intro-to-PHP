@@ -9,7 +9,12 @@
       $name = "Rachel";
       $number = 100;
 //concatanation in php
-      echo $name . $number;
+      echo $name . " " . $number;
+
+      $name = "<h1>HELLO</h1>";
+
+      echo $name;
+
     ?>
   </body>
 </html>
