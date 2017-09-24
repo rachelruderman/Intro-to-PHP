@@ -1,15 +1,5 @@
 <?php include "db.php";
   if(isset($_POST['submit'])){
-    echo 'yes we got it!';
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    if($username && $password){
-      echo '<br>' . "hi $username, your password is $password";
-    } else {
-      echo '<br> noooo <br>';
-    }
-
     //.= to concatenate
     $query = "INSERT INTO users(username, password) ";
     $query .= "VALUES ('$username', '$password')";
@@ -57,7 +47,12 @@
             <input name='submit' type="submit" name="submit" value="Submit" class='btn btn-primary'>
           <div class="form-group">
             <select name='id' id=''>
-              <option value=''>ID</option>
+              <?php
+                while($row = mysqli_fetch_assoc($listResult)){
+                  $id = $row['id'];
+                  echo "<option value='$id'>$id</option>";
+                }
+               ?>
             </select>
           </div>
         </form>
