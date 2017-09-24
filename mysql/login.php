@@ -7,7 +7,7 @@
     if($username && $password){
       echo '<br>' . "hi $username, your password is $password";
     } else {
-      echo 'noooo';
+      echo '<br> noooo <br>';
     }
     //params: the server, server username, server password, database
     //default server username is 'root'
@@ -18,6 +18,16 @@
     } else {
       die('db connection failed');
       //die stops running the code
+    }
+
+    //.= to concatenate
+    $query = "INSERT INTO users(username, password) ";
+    $query .= "VALUES ('$username', '$password')";
+
+    $result = mysqli_query($connection, $query);
+
+    if(!$result){
+      die('Query Failed: ' . mysqli_error());
     }
   }
  ?>
