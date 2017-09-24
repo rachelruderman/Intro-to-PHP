@@ -4,7 +4,21 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    echo '<br>' . "hi $username, your password is $password";
+    if($username && $password){
+      echo '<br>' . "hi $username, your password is $password";
+    } else {
+      echo 'noooo';
+    }
+    //params: the server, server username, server password, database
+    //default server username is 'root'
+    $connection = mysqli_connect('localhost', 'root', 'root', 'login-app');
+
+    if($connection){
+      echo 'we are connected!';
+    } else {
+      die('db connection failed');
+      //die stops running the code
+    }
   }
  ?>
 
