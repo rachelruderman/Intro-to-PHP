@@ -1,21 +1,5 @@
 <?php include "db.php";
-  if(isset($_POST['submit'])){
-    //.= to concatenate
-    $query = "INSERT INTO users(username, password) ";
-    $query .= "VALUES ('$username', '$password')";
-
-    $result = mysqli_query($connection, $query);
-
-    if(!$result){
-      die('Query Failed: ' . mysqli_error());
-    }
-
-    $listQuery = "SELECT * FROM users";
-    $listResult = mysqli_query($connection, $listQuery);
-    if(!listResult){
-      die('List query failed');
-    }
-  }
+      include "functions.php";
  ?>
 
 <!DOCTYPE html>
@@ -29,12 +13,6 @@
   <body>
     <div class='container'>
       <div class='col-xs-6'>
-        <?php
-        //mysqli_fetch_assoc returns an associative array
-        while($row = mysqli_fetch_row($listResult)){
-          print_r($row);
-        }
-         ?>
         <form class="" action="login.php" method="post">
           <div class="form-group">
             <label for="username">Username</label>
@@ -48,10 +26,7 @@
           <div class="form-group">
             <select name='id' id=''>
               <?php
-                while($row = mysqli_fetch_assoc($listResult)){
-                  $id = $row['id'];
-                  echo "<option value='$id'>$id</option>";
-                }
+                fetchUsers();
                ?>
             </select>
           </div>
