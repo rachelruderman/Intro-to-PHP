@@ -17,7 +17,7 @@
     $result = mysqli_query($connection, $query);
 
     if(!$result){
-      die('Query Failed: ' . mysqli_error());
+      die('Query Failed: ' . mysqli_error($connection));
     }
 
     $listQuery = "SELECT * FROM users";
