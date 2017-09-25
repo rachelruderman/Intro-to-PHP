@@ -1,9 +1,12 @@
 <?php
 //classes are blueprints
   class Car {
-    var $wheels = 4;
-    var $hood = 1;
-    var $engine = 1;
+    //public = available to whole program
+    //protected = available to this class, subclasses and extended classes
+    //private = only available to this class, not subclasses or extended classes
+    public $wheels = 4;
+    protected $hood = 1;
+    private $engine = 1;
     var $doors = 4;
 
     function wheels(){
