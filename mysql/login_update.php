@@ -7,36 +7,24 @@
 
  ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
-  </head>
-  <body>
-    <div class='container'>
-      <div class='col-xs-6'>
-        <form class="" action="login_update.php" method="post">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input class='form-control' type="text" name="username" value="">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input class='form-control' type="password" name="password" value="">
-          </div>
-            <input name='submit' type="submit" name="submit" value="Update User" class='btn btn-primary'>
-          <div class="form-group">
-            <select name='id' id=''>
-              <?php
-                fetchUsers();
-               ?>
-            </select>
-          </div>
-        </form>
+<?php include "includes/header.php"; ?>
+  <h1 class='text-center'>Update</h1>
+    <form class="" action="login_update.php" method="post">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input class='form-control' type="text" name="username" value="">
       </div>
-    </div>
-  </body>
-</html>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class='form-control' type="password" name="password" value="">
+      </div>
+        <input name='submit' type="submit" name="submit" value="Update User" class='btn btn-primary'>
+      <div class="form-group">
+        <select name='id' id=''>
+          <?php
+            fetchUsers();
+           ?>
+        </select>
+      </div>
+    </form>
+  <?php include "includes/footer.php"; ?>

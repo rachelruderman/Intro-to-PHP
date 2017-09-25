@@ -7,28 +7,14 @@
 
  ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
-  </head>
-  <body>
-    <div class='container'>
-      <div class='col-xs-6'>
-        <form class="" action="login_delete.php" method="post">
-          <input name='submit' type="submit" name="submit" value="Delete User" class='btn btn-primary'>
-          <div class="form-group">
-            <select name='id' id=''>
-              <?php
-                fetchUsers();
-               ?>
-            </select>
-          </div>
-        </form>
+<?php include "includes/header.php"; ?>
+  <h1 class='text-center'>Delete</h1>
+    <form class="" action="login_delete.php" method="post">
+      <div class="form-group">
+        <select name='id' id=''>
+          <?php fetchUsers(); ?>
+        </select>
       </div>
-    </div>
-  </body>
-</html>
+      <input name='submit' type="submit" name="submit" value="Delete User" class='btn btn-primary'>
+    </form>
+<?php include "includes/footer.php"; ?>
