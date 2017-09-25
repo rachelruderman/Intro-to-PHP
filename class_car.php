@@ -38,4 +38,14 @@
 
   //$this is how we reference a class inside a class
 
+  //extend for class inheritance
+
+  class Plane extends Car {
+
+  }
+
+  $jet = new Plane();
+  echo $jet->wheels;
+
+
  ?>
