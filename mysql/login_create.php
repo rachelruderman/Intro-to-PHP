@@ -1,20 +1,10 @@
 <?php include "db.php";
-  if(isset($_POST['submit'])){
+      include "functions.php";
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+      if(isset($_POST['submit'])){
+        createUsers();
+      }
 
-    $query = "INSERT INTO users(username, password) ";
-    $query .= "VALUES ('$username', '$password')";
-
-    $result = mysqli_query($connection, $query);
-
-    if(!$result){
-      die('Query Failed: ' . mysqli_error());
-    } else {
-      echo 'Success!';
-    }
-  }
  ?>
 
 <!DOCTYPE html>

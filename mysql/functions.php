@@ -33,4 +33,21 @@
     }
   }
 
+  function createUsers(){
+    global $connection;
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $query = "INSERT INTO users(username, password) ";
+    $query .= "VALUES ('$username', '$password')";
+
+    $result = mysqli_query($connection, $query);
+
+    if(!$result){
+      die('Query Failed: ' . mysqli_error($connection));
+    } else {
+      echo 'Success!';
+    }
+  }
+
  ?>
