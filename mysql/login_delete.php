@@ -2,7 +2,7 @@
       include "functions.php";
 
       if(isset($_POST['submit'])){
-        updateUsers();
+        deleteUsers();
       }
 
  ?>
@@ -18,16 +18,8 @@
   <body>
     <div class='container'>
       <div class='col-xs-6'>
-        <form class="" action="login_update.php" method="post">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input class='form-control' type="text" name="username" value="">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input class='form-control' type="password" name="password" value="">
-          </div>
-            <input name='submit' type="submit" name="submit" value="Update User" class='btn btn-primary'>
+        <form class="" action="login_delete.php" method="post">
+          <input name='submit' type="submit" name="submit" value="Delete User" class='btn btn-primary'>
           <div class="form-group">
             <select name='id' id=''>
               <?php
