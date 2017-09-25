@@ -1,6 +1,9 @@
 <?php include "db.php";
   if(isset($_POST['submit'])){
 
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
     $query = "INSERT INTO users(username, password) ";
     $query .= "VALUES ('$username', '$password')";
 
