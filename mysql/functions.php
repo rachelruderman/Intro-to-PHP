@@ -48,8 +48,11 @@
 
   function createUsers(){
     global $connection;
+
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $username = mysqli_real_escape_string($connection, $username);
+    $password = mysqli_real_escape_string($connection, $password);
 
     $query = "INSERT INTO users(username, password) ";
     $query .= "VALUES ('$username', '$password')";
